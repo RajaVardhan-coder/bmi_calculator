@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BMI CALCULATOR</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-    <h1 Id="Heading" >BMI CALCULATOR</h1>
-    <form id="myForm">
-        Weight: <input Id="Weight" type="text" placeholder="Kilogram" name="fname"><br><br>
-        Height: <input Id="Feet"type="text" placeholder="Feet" size="5" name="lname">  <input Id="Inches"type="text" placeholder="Inches" size="5"name="lname"><br><br>
-        <input type="button" onclick="myFunction()" value="Submit">
-      </form>
-      <h3 Id="result">BMI = 0.0</h3>
-    </div>
-    <br>
-    <img src="chart.jpg" alt="Girl in a jacket" height="1140" width="1500">
-	<script src="index.js"></script>
+    <main class="page">
+      <section class="card" aria-labelledby="heading">
+        <h1 id="heading">BMI Calculator</h1>
+        <p class="subtitle">Quickly check your body mass index.</p>
+
+        <form id="myForm" class="bmi-form">
+          <label for="Weight">Weight (kg)</label>
+          <input id="Weight" type="number" placeholder="e.g. 72" min="0" step="0.1" />
+
+          <div class="height-group">
+            <div>
+              <label for="Feet">Height (ft)</label>
+              <input id="Feet" type="number" placeholder="5" min="0" step="1" />
+            </div>
+            <div>
+              <label for="Inches">Height (in)</label>
+              <input id="Inches" type="number" placeholder="10" min="0" step="1" />
+            </div>
+          </div>
+
+          <input type="button" onclick="myFunction()" value="Calculate BMI" />
+        </form>
+
+        <h3 id="result" aria-live="polite">BMI = 0.0</h3>
+      </section>
+
+      <section class="chart-card">
+        <h2>BMI Reference Chart</h2>
+        <img src="chart.jpg" alt="Body Mass Index reference chart" />
+      </section>
+    </main>
+
+    <script src="index.js"></script>
   </body>
 </html>
